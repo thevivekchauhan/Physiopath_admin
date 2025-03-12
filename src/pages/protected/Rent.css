@@ -1,0 +1,743 @@
+/* total line 722 */
+/* total line 663 */
+
+.app-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    width: 250px;
+}
+
+.product-image {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.actions button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actions button:hover {
+    background-color: #0056b3;
+}
+
+.popup-overlay,
+.cart-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content,
+.cart-modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.popup-content .quantity-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.popup-content .quantity-selector button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content .quantity-selector span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.popup-content .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.popup-content .popup-buttons button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content .popup-buttons .add-to-cart {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.popup-content .popup-buttons .add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.popup-content .popup-buttons .cancel {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.popup-content .popup-buttons .cancel:hover {
+    background-color: #c82333;
+}
+
+.cart-item-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.cart-item-controls button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item-controls button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+/* Additional styles for Cart Items with images */
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cart-item-controls button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item-controls button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Cart Modal - Button Styles */
+.cart-modal-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.cart-modal-content .cart-item-controls button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.cart-modal-content button:hover {
+    opacity: 0.9;
+}
+
+.cart-modal-content .proceed-btn {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    width: auto;
+    min-width: 150px;
+}
+
+.cart-modal-content .proceed-btn:hover {
+    background-color: #218838;
+}
+
+.cart-modal-content .close-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 5px;
+    width: auto;
+    min-width: 150px;
+}
+
+.cart-modal-content .close-btn:hover {
+    background-color: #c82333;
+}
+
+.cart-modal-content .cart-item-controls button {
+    background-color: #ffc107;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.cart-modal-content .cart-item-controls button:hover {
+    background-color: #e0a800;
+}
+
+/* Additional Button Padding and Alignment */
+.cart-modal-content button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart-modal-content .cart-item-controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* Cart Modal Overlay */
+.cart-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Cart Modal Content */
+.cart-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.cart-modal-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cart-item-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+}
+
+.cart-quantity-btn {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cart-quantity-btn:hover {
+    background-color: #ddd;
+}
+
+.remove-item-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    background-color: #ff4c4c;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.remove-item-btn:hover {
+    background-color: #e63a3a;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.cart-modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-modal-actions button {
+    display: inline-block;
+    width: auto;
+    min-width: 140px;
+}
+
+.proceed-btn,
+.close-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+}
+
+.proceed-btn {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.proceed-btn:hover {
+    background-color: #45a049;
+}
+
+.close-btn {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.close-btn:hover {
+    background-color: #e53935;
+}
+
+/* Cart Modal Container */
+.cart-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title for Cart Items */
+.cart-modal-content h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Cart Items List */
+.cart-modal-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-controls button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item-controls button:hover {
+    background-color: #f4f4f4;
+}
+
+/* Action Buttons for Proceeding or Closing */
+.cart-modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cart-modal-actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 48%;
+}
+
+/* Close Button */
+.close-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.close-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Proceed Button */
+.proceed-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.proceed-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 600px) {
+    .cart-modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.payment-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-option {
+    background: #008cba;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.payment-option:hover {
+    background: #005f7f;
+}
+
+.popup-buttons .close-payment-popup {
+    background: #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn {
+    background: #ff6347;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cart-modal-overlay {
+    z-index: 9998;
+}
+
+.popup-buttons button,
+.cart-modal-actions button,
+.payment-options button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-buttons .confirm-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.popup-buttons .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cart-modal-actions .proceed-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.cart-modal-actions .close-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.payment-options button {
+    background-color: #007bff;
+    color: white;
+}
+
+.payment-options button:hover {
+    background-color: #0056b3;
+}
+
+.add-product-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.add-product-form h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.add-product-form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.add-product-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.add-product-form button:hover {
+  background-color: #0056b3;
+}
+
+.qr-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.qr-popup-content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.qr-popup-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.qr-popup-content .close-qr-popup {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.qr-popup-content .close-qr-popup:hover {
+  background: #0056b3;
+}
